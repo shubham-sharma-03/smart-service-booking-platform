@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Service Booking</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🔧 Smart Service Booking</h1>
+    <p class="subtitle">Book trusted services instantly</p>
+
+    <!-- FORM (IMPORTANT) -->
+    <form id="bookingForm" class="form">
+        <input id="username" placeholder="Your Name" required>
+        <input id="serviceType" placeholder="Service" required>
+        <input id="providerName" placeholder="Provider" required>
+        <button type="submit">Book Service</button>
+    </form>
+
+    <p id="message"></p>
+
+    <h3>📋 All Bookings</h3>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Service</th>
+            <th>Provider</th>
+            <th>Status</th>
+            <th>Token</th>
+            <th>Track</th>
+        </tr>
+        </thead>
+        <tbody id="bookingTable"></tbody>
+    </table>
+    <button onclick="confirmBooking(4)">Confirm</button>
+
+    <div class="support-actions">
+        <a href="tel:+911800123456" class="call-btn">📞 Call Customer Care</a>
+    </div>
+
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>
