@@ -1,43 +1,64 @@
 package com.smart_service_booking.entity;
 
+import com.smart_service_booking.enums.BookingStatus;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "bookings")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String userName;
+
+    @Column(nullable = false)
     private String serviceType;
-    private String providerName;
-    private String status;
-    private Integer tokenNumber;
+
+    @Column(nullable = false)
+    private String provider;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private BookingStatus status = BookingStatus.PENDING;
+
+    @Column(unique = true)
+    private String token;
+
+    @Column(nullable = false)
+    private LocalDateTime bookingDate = LocalDateTime.now();
+
+    private LocalDateTime completedDate;
+
     private String phoneNumber;
 
-    private Double technicianLat;
-    private Double technicianLng;
+    private String address;
 
-    // ===== GETTERS =====
-    public Long getId() { return id; }
-    public String getUserName() { return userName; }
-    public String getServiceType() { return serviceType; }
-    public String getProviderName() { return providerName; }
-    public String getStatus() { return status; }
-    public Integer getTokenNumber() { return tokenNumber; }
-    public String getPhoneNumber() { return phoneNumber; }
-    public Double getTechnicianLat() { return technicianLat; }
-    public Double getTechnicianLng() { return technicianLng; }
+    @Column(length = 500)
+    private String notes;
 
-    // ===== SETTERS =====
-    public void setUserName(String userName) { this.userName = userName; }
-    public void setServiceType(String serviceType) { this.serviceType = serviceType; }
-    public void setProviderName(String providerName) { this.providerName = providerName; }
-    public void setStatus(String status) { this.status = status; }
-    public void setTokenNumber(Integer tokenNumber) { this.tokenNumber = tokenNumber; }
-    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
-    public void setTechnicianLat(Double technicianLat) { this.technicianLat = technicianLat; }
-    public void setTechnicianLng(Double technicianLng) { this.technicianLng = technicianLng; }
+    @ManyToOne
+    @JoinColumn(name = "technician_id")
+    private Technician technician;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @PrePersist
+    public void generateToken() {
+        if (this.token == null) {
+            this.token = "TKN" + System.currentTimeMillis();
+        }
+    }
 }

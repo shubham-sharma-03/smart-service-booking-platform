@@ -1,19 +1,17 @@
-//package com.Shubham.smart_service_booking.repository;
-//
-//
-//import com.Shubham.smart_service_booking.entity.SupportTicket;
-//import org.springframework.data.jpa.repository.JpaRepository;
-//
-//public interface SupportTicketRepository
-//        extends JpaRepository<SupportTicket, Long> {
-//}
-
-
 package com.smart_service_booking.repository;
 
 import com.smart_service_booking.entity.SupportTicket;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface SupportTicketRepository
-        extends JpaRepository<SupportTicket, Long> {
+import java.util.List;
+
+@Repository
+public interface SupportTicketRepository extends JpaRepository<SupportTicket, Long> {
+
+    List<SupportTicket> findByStatus(String status);
+
+    List<SupportTicket> findByBookingId(Long bookingId);
+
+    long countByStatus(String status);
 }
