@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: smart-service-booking
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/service_db
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update     # update for development
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/static/
+    suffix: .html
+    check-template-location: false
+
+  web:
+    resources:
+      static-locations: classpath:/static/
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: shubhamsharmaas7715@gmail.com
+    password: Shubh@7715
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.security: INFO
+    com.smart_service_booking: DEBUG

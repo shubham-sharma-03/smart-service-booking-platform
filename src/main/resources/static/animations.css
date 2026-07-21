@@ -1,0 +1,39 @@
+.fade-in-up {
+  animation: fadeInUp 0.6s ease both;
+}
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Toasts */
+.toast-container {
+  position: fixed; bottom: 24px; right: 24px; z-index: 2000;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.toast {
+  min-width: 260px; max-width: 340px;
+  background: var(--surface); border-left: 4px solid var(--primary);
+  box-shadow: var(--shadow-lg); border-radius: 8px;
+  padding: 14px 16px; font-size: 0.9rem;
+  animation: slideIn 0.3s ease, fadeOut 0.4s ease 3.2s forwards;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.toast.success { border-left-color: var(--success); }
+.toast.error { border-left-color: var(--danger); }
+.toast.warning { border-left-color: var(--warning); }
+.toast i { margin-top: 2px; }
+
+@keyframes slideIn {
+  from { transform: translateX(110%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateX(30px); }
+}
+
+/* Row fade for dynamically inserted table rows */
+.row-fade-in { animation: fadeInUp 0.35s ease both; }

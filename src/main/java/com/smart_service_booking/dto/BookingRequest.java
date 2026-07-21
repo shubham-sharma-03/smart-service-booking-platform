@@ -11,4 +11,8 @@ public class BookingRequest {
     private String address;
     private String notes;
     private Long technicianId;
+
+    // NEW
+    private String technicianName;
+    private String technicianPhone;
 }

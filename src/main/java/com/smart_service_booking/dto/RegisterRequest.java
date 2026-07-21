@@ -4,10 +4,8 @@ import lombok.Data;
 
 @Data
 public class RegisterRequest {
-    private String fullName;
-    private String email;
-    private String username;
-    private String password;
-    private String phoneNumber;
-    private String role;
+    private String name;        // matches frontend: name
+    private String email;       // matches frontend: email
+    private String phone;       // matches frontend: phone
+    private String password;    // matches frontend: password
 }

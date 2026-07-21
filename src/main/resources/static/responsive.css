@@ -1,0 +1,25 @@
+@media (max-width: 900px) {
+  .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+  .dashboard-charts { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--surface); padding: 16px 24px;
+    border-bottom: 1px solid var(--border); gap: 14px;
+  }
+  .hero h1 { font-size: 1.9rem; }
+  .hero-stats { flex-direction: column; align-items: center; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .nav-actions .btn span, .nav-actions .btn { font-size: 0.85rem; padding: 8px 14px; }
+}
+
+@media (max-width: 480px) {
+  .modal-box { padding: 24px; }
+  .section { padding: 50px 16px; }
+}

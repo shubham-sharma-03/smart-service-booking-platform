@@ -8,20 +8,22 @@ import org.springframework.stereotype.Component;
 public class BookingMapper {
 
     public BookingResponse toResponse(Booking booking) {
-        return BookingResponse.builder()
-                .id(booking.getId())
-                .userName(booking.getUserName())
-                .serviceType(booking.getServiceType())
-                .provider(booking.getProvider())
-                .status(booking.getStatus())
-                .token(booking.getToken())
-                .bookingDate(booking.getBookingDate())
-                .completedDate(booking.getCompletedDate())
-                .phoneNumber(booking.getPhoneNumber())
-                .address(booking.getAddress())
-                .technicianName(booking.getTechnician() != null ? booking.getTechnician().getName() : null)
-                .technicianLat(booking.getTechnician() != null ? booking.getTechnician().getCurrentLat() : null)
-                .technicianLng(booking.getTechnician() != null ? booking.getTechnician().getCurrentLng() : null)
-                .build();
+        BookingResponse response = new BookingResponse();
+        response.setId(booking.getId());
+        response.setUserName(booking.getUserName());
+        response.setServiceType(booking.getServiceType());
+        response.setProvider(booking.getProvider());
+        response.setPhoneNumber(booking.getPhoneNumber());
+        response.setAddress(booking.getAddress());
+        response.setNotes(booking.getNotes());
+        response.setStatus(booking.getStatus());
+        response.setBookingDate(booking.getBookingDate());
+        response.setCompletedDate(booking.getCompletedDate());
+
+        if (booking.getTechnician() != null) {
+            response.setTechnicianName(booking.getTechnician().getName());
+        }
+
+        return response;
     }
 }

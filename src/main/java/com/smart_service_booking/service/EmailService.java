@@ -15,14 +15,16 @@ public class EmailService {
 
     public void sendTicketNotification(SupportTicket ticket) {
         if (mailSender == null) {
-            System.out.println("Email not configured. Ticket: " + ticket.getIssue());
+            System.out.println("Email not configured. Ticket: " + ticket.getSubject());
             return;
         }
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo("admin@smartbooking.com");
         message.setSubject("New Support Ticket #" + ticket.getId());
-        message.setText("Issue: " + ticket.getIssue() + "\nBooking ID: " + ticket.getBookingId());
+        message.setText("Subject: " + ticket.getSubject() +
+                "\nMessage: " + ticket.getMessage() +
+                "\nBooking ID: " + ticket.getBookingId());
         mailSender.send(message);
     }
 

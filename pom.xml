@@ -5,7 +5,6 @@
                              https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- FIXED: Spring Boot 3.3.5 (latest stable 2026) -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -21,60 +20,51 @@
 
 	<properties>
 		<java.version>17</java.version>
-		<!-- FIXED: Explicit versions for compatibility -->
 		<jjwt.version>0.12.6</jjwt.version>
-		<springdoc.version>2.6.0</springdoc.version>
+		<springdoc.version>2.6.0</springdoc.version>  <!-- UPGRADED -->
+		<lombok.version>1.18.34</lombok.version>         <!-- ADDED -->
 	</properties>
 
 	<dependencies>
-		<!-- ========== SPRING BOOT STARTERS ========== -->
+		<!-- Spring Boot Starters -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-
-		<!-- FIXED: Spring Security 6.x (matches Boot 3.3.x) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 
-		<!-- ========== DATABASE ========== -->
+		<!-- Database -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
-		<!-- H2 for development/testing -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- ========== JWT (FIXED to 0.12.6 for Jakarta/Spring Boot 3) ========== -->
-		<!-- Spring Boot 3 uses Jakarta EE, not javax. JJWT 0.12.x supports Jakarta -->
+		<!-- JWT -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
@@ -93,21 +83,21 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- ========== SWAGGER/OPENAPI (FIXED for Spring Boot 3.3) ========== -->
+		<!-- Swagger/OpenAPI -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>${springdoc.version}</version>
 		</dependency>
 
-		<!-- ========== LOMBOK ========== -->
+		<!-- Lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
 
-		<!-- ========== DEVTOOLS (hot reload) ========== -->
+		<!-- DevTools -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -115,7 +105,7 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- ========== TESTING ========== -->
+		<!-- Testing -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -137,6 +127,7 @@
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
+					<parameters>true</parameters>  <!-- FIXED: Parameter name discovery -->
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.projectlombok</groupId>

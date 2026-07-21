@@ -2,63 +2,50 @@ package com.smart_service_booking.entity;
 
 import com.smart_service_booking.enums.BookingStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "bookings")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String userName;
-
-    @Column(nullable = false)
     private String serviceType;
-
-    @Column(nullable = false)
     private String provider;
-
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private BookingStatus status = BookingStatus.PENDING;
-
-    @Column(unique = true)
-    private String token;
-
-    @Column(nullable = false)
-    private LocalDateTime bookingDate = LocalDateTime.now();
-
-    private LocalDateTime completedDate;
-
     private String phoneNumber;
-
     private String address;
-
-    @Column(length = 500)
     private String notes;
 
-    @ManyToOne
-    @JoinColumn(name = "technician_id")
-    private Technician technician;
+    // NEW: snapshot fields for the randomly-assigned technician shown on the frontend
+    private String assignedTechName;
+    private String assignedTechPhone;
+
+    @Enumerated(EnumType.STRING)
+    private BookingStatus status;
+
+    private LocalDateTime bookingDate;
+    private LocalDateTime completedDate;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "technician_id")
+    private Technician technician;
+
+    private String token;
+
     @PrePersist
-    public void generateToken() {
-        if (this.token == null) {
-            this.token = "TKN" + System.currentTimeMillis();
-        }
+    protected void onCreate() {
+        bookingDate = LocalDateTime.now();
+        if (status == null) status = BookingStatus.PENDING;
+        if (token == null) token = java.util.UUID.randomUUID().toString();
     }
 }

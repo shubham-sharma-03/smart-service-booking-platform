@@ -45,14 +45,20 @@ public class BookingService {
 
     public Booking createBooking(BookingRequest request) {
         Booking booking = new Booking();
-        booking.setUserName(request.getUserName());
+        booking.setUserName(request.getUserName() != null ? request.getUserName() : "Anonymous");
         booking.setServiceType(request.getServiceType());
-        booking.setProvider(request.getProvider());
+        booking.setProvider(request.getProvider() != null ? request.getProvider() : request.getServiceType());
         booking.setPhoneNumber(request.getPhoneNumber());
         booking.setAddress(request.getAddress());
         booking.setNotes(request.getNotes());
         booking.setStatus(BookingStatus.PENDING);
+        booking.setBookingDate(LocalDateTime.now());
 
+        // NEW: persist the randomly-assigned technician snapshot
+        booking.setAssignedTechName(request.getTechnicianName());
+        booking.setAssignedTechPhone(request.getTechnicianPhone());
+
+        // Handle real technician relation if a technicianId was ever provided
         if (request.getTechnicianId() != null) {
             Technician tech = technicianRepository.findById(request.getTechnicianId())
                     .orElseThrow(() -> new ResourceNotFoundException("Technician not found"));
@@ -61,7 +67,6 @@ public class BookingService {
 
         Booking saved = bookingRepository.save(booking);
 
-        // Send SMS notification
         if (saved.getPhoneNumber() != null) {
             smsService.sendBookingConfirmation(saved);
         }

@@ -1,0 +1,23 @@
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal-box {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 36px;
+  width: 100%; max-width: 420px;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+}
+.modal-box h2 { margin-bottom: 22px; font-size: 1.5rem; }
+.modal-close {
+  position: absolute; top: 16px; right: 18px;
+  background: none; border: none; font-size: 1.4rem;
+  cursor: pointer; color: var(--text-muted);
+}
+.modal-box form { display: flex; flex-direction: column; gap: 16px; }
+.switch-auth { text-align: center; margin-top: 18px; font-size: 0.9rem; color: var(--text-muted); }
+.switch-auth a { color: var(--primary); font-weight: 600; cursor: pointer; }

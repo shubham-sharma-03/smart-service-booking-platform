@@ -9,9 +9,10 @@ import java.util.List;
 @Repository
 public interface SupportTicketRepository extends JpaRepository<SupportTicket, Long> {
 
+    // Fix: Add these methods
+    long countByStatus(String status);
+
     List<SupportTicket> findByStatus(String status);
 
     List<SupportTicket> findByBookingId(Long bookingId);
-
-    long countByStatus(String status);
 }

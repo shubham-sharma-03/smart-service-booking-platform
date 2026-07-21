@@ -2,7 +2,6 @@ package com.smart_service_booking.service;
 
 import com.smart_service_booking.enums.BookingStatus;
 import com.smart_service_booking.repository.BookingRepository;
-import com.smart_service_booking.repository.SupportTicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,20 +14,22 @@ public class DashboardService {
     @Autowired
     private BookingRepository bookingRepository;
 
-    @Autowired
-    private SupportTicketRepository supportTicketRepository;
-
     public Map<String, Object> getDashboardStats() {
-        Map<String, Object> stats = new HashMap<>();
+        Map<String, Object> dashboard = new HashMap<>();
 
-        stats.put("totalBookings", bookingRepository.count());
-        stats.put("pendingBookings", bookingRepository.countByStatus(BookingStatus.PENDING));
-        stats.put("completedBookings", bookingRepository.countByStatus(BookingStatus.COMPLETED));
-        stats.put("cancelledBookings", bookingRepository.countByStatus(BookingStatus.CANCELLED));
-        stats.put("openTickets", supportTicketRepository.countByStatus("OPEN"));
-        stats.put("serviceDistribution", bookingRepository.countByServiceType());
-        stats.put("weeklyStats", bookingRepository.getWeeklyStats());
+        long totalBookings = bookingRepository.count();
+        long pending = bookingRepository.countByStatus(BookingStatus.PENDING);
+        long confirmed = bookingRepository.countByStatus(BookingStatus.CONFIRMED);
+        long completed = bookingRepository.countByStatus(BookingStatus.COMPLETED);
+        long cancelled = bookingRepository.countByStatus(BookingStatus.CANCELLED);
 
-        return stats;
+        dashboard.put("totalBookings", totalBookings);
+        dashboard.put("pendingBookings", pending);
+        dashboard.put("confirmedBookings", confirmed);
+        dashboard.put("completedBookings", completed);
+        dashboard.put("cancelledBookings", cancelled);
+
+
+        return dashboard;
     }
 }
