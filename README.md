@@ -1,4 +1,4 @@
-# 🚀 Smart Service Booking Platform
+<img width="1920" height="1080" alt="Screenshot 2026-07-26 121612" src="https://github.com/user-attachments/assets/6325821b-7538-4758-9916-e54ff36fde8a" /><img width="1920" height="1080" alt="Screenshot 2026-07-26 122100" src="https://github.com/user-attachments/assets/b92b3cc4-9d52-4f52-aa6c-e388eaf7eabc" /><img width="1920" height="1080" alt="Screenshot 2026-07-26 121952" src="https://github.com/user-attachments/assets/29707365-90cf-4d41-9f4b-6b1218f9936f" /># 🚀 Smart Service Booking Platform
 
 A full-stack web application that allows users to book home services such as electricians, plumbers, carpenters, and more. The platform provides secure authentication, real-time booking management, technician assignment, live location tracking using Google Maps, and notification support.
 
@@ -152,13 +152,13 @@ src/main/java/com/smart_service_booking
 ### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/smart-service-booking-platform.git
+git clone https://github.com/shubham-sharma-03/smart-service-booking-platform.git
 ```
 
 ### Move into Project
 
 ```bash
-cd smart-service-booking-platform
+cd Smart-Service-Booking-Platform
 ```
 
 ### Configure PostgreSQL
@@ -217,15 +217,50 @@ http://localhost:8080
 
 ---
 
-## 📷 Screenshots
+## 📷 Application Screenshots
 
-> Add screenshots of:
-- Home Page
-- Login
-- Dashboard
-- Booking Form
-- Booking History
-- Technician Tracking (Google Maps)
+### 🏠 Home Page
+
+![Home](<img width="1920" height="1080" alt="Screenshot 2026-07-26 121612" src="https://github.com/user-attachments/assets/67e71a76-5188-4c6c-8357-97849ce40d3b" />
+)
+
+---
+
+### 🔐 Login Page
+
+![Login](<img width="1920" height="1080" alt="Screenshot 2026-07-26 122144" src="https://github.com/user-attachments/assets/58e3e531-e92c-47dc-81f8-384ede153b83" />
+)
+
+---
+
+### 📊 Dashboard
+
+![Dashboard](<img width="1920" height="1080" alt="Screenshot 2026-07-26 122100" src="https://github.com/user-attachments/assets/3af8be03-5a9d-4b65-9df4-0987ce947328" />
+)
+
+---
+
+### 📅 Booking Form
+
+![Booking Form](
+<img width="1920" height="1080" alt="Screenshot 2026-07-26 121952" src="https://github.com/user-attachments/assets/3ba04cd6-a27f-483d-8662-3d2c42a36f0c" />
+)
+
+---
+
+### 📜 Booking History
+
+![Booking History](<img width="1920" height="1080" alt="Screenshot 2026-07-26 122114" src="https://github.com/user-attachments/assets/db2b7532-8503-4d04-9b7a-b25b19d2393b" />
+)
+
+---
+
+### 📍 Technician Live Tracking
+
+![Tracking](
+<img width="1920" height="1080" alt="Screenshot 2026-07-26 122039" src="https://github.com/user-attachments/assets/c41f37b3-001a-45b9-8c9d-da4111d23cf4" />
+)
+
 
 ---
 
