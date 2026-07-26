@@ -221,47 +221,33 @@ http://localhost:8080
 
 ### 🏠 Home Page
 
-![Home](<img width="1920" height="1080" alt="Screenshot 2026-07-26 121612" src="https://github.com/user-attachments/assets/67e71a76-5188-4c6c-8357-97849ce40d3b" />
-)
+<img width="1920" height="1080" alt="Screenshot 2026-07-26 121612" src="https://github.com/user-attachments/assets/67e71a76-5188-4c6c-8357-97849ce40d3b" />
 
 ---
 
 ### 🔐 Login Page
 
-![Login](<img width="1920" height="1080" alt="Screenshot 2026-07-26 122144" src="https://github.com/user-attachments/assets/58e3e531-e92c-47dc-81f8-384ede153b83" />
-)
-
+<img width="1920" height="1080" alt="Screenshot 2026-07-26 122144" src="https://github.com/user-attachments/assets/58e3e531-e92c-47dc-81f8-384ede153b83" />
 ---
 
 ### 📊 Dashboard
 
-![Dashboard](<img width="1920" height="1080" alt="Screenshot 2026-07-26 122100" src="https://github.com/user-attachments/assets/3af8be03-5a9d-4b65-9df4-0987ce947328" />
-)
-
+<img width="1920" height="1080" alt="Screenshot 2026-07-26 122100" src="https://github.com/user-attachments/assets/3af8be03-5a9d-4b65-9df4-0987ce947328" />
 ---
 
 ### 📅 Booking Form
 
-![Booking Form](
 <img width="1920" height="1080" alt="Screenshot 2026-07-26 121952" src="https://github.com/user-attachments/assets/3ba04cd6-a27f-483d-8662-3d2c42a36f0c" />
-)
-
 ---
 
 ### 📜 Booking History
 
-![Booking History](<img width="1920" height="1080" alt="Screenshot 2026-07-26 122114" src="https://github.com/user-attachments/assets/db2b7532-8503-4d04-9b7a-b25b19d2393b" />
-)
-
+<img width="1920" height="1080" alt="Screenshot 2026-07-26 122114" src="https://github.com/user-attachments/assets/db2b7532-8503-4d04-9b7a-b25b19d2393b" />
 ---
 
-### 📍 Technician Live Tracking
+### 📍 Technician Tracking
 
-![Tracking](
 <img width="1920" height="1080" alt="Screenshot 2026-07-26 122039" src="https://github.com/user-attachments/assets/c41f37b3-001a-45b9-8c9d-da4111d23cf4" />
-)
-
-
 ---
 
 ## 🤝 Contributing
@@ -293,12 +279,19 @@ git push origin feature-name
 
 ## 👨‍💻 Author
 
-### Shubham Sharma
+**Shubham Sharma**
 
-- **GitHub:** https://github.com/shubham-sharma-03
-- **LinkedIn:** https://www.linkedin.com/in/shubham-sharma2004/
+- GitHub: https://github.com/shubham-sharma-03
+- LinkedIn: https://www.linkedin.com/in/shubham-sharma2004/
 
 ---
+
+---
+## 🌐 Live Demo
+
+https://smart-service-booking-platform-ee5n.onrender.com
+---
+
 
 ## ⭐ Support
 
