@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="Screenshot 2026-07-26 121612" src="https://github.com/user-attachments/assets/6325821b-7538-4758-9916-e54ff36fde8a" /><img width="1920" height="1080" alt="Screenshot 2026-07-26 122100" src="https://github.com/user-attachments/assets/b92b3cc4-9d52-4f52-aa6c-e388eaf7eabc" /><img width="1920" height="1080" alt="Screenshot 2026-07-26 121952" src="https://github.com/user-attachments/assets/29707365-90cf-4d41-9f4b-6b1218f9936f" /># 🚀 Smart Service Booking Platform
+🚀 Smart Service Booking Platform
 
 A full-stack web application that allows users to book home services such as electricians, plumbers, carpenters, and more. The platform provides secure authentication, real-time booking management, technician assignment, live location tracking using Google Maps, and notification support.
 
